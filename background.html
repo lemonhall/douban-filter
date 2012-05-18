@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<!--
+ * Copyright (c) 2010 The Chromium Authors. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+  <head>
+    <script>
+	
+	(function(){
+	var tarck_counter=0;
+	var musiclist=new Array();
+    // Listen for the content script to send a message to the background page.
+	chrome.extension.onConnect.addListener(function(port) {
+    var tab = port.sender.tab;
+	
+    // This will get called by the content script we execute in
+    // the tab as a result of the user pressing the browser action.
+    port.onMessage.addListener(function(message) {
+			if(message=="Changed "){
+				//收到歌曲已经切换的信息
+				//alert(message+n+musiclist[n]);
+				//打开下一首曲子
+				chrome.tabs.create({ url: musiclist[tarck_counter+1] },function(tab){
+					chrome.tabs.executeScript(tab.id, {file: "onTitleChange.js"});
+					//chrome.tabs.remove(tab.id-1);
+				});
+				n++;
+				if(n>musiclist.length){tarck_counter=0;}
+			}
+			if(message instanceof Array){
+				//第一次初始化播放列表
+				tarck_counter=0;
+				musiclist=message;
+				chrome.tabs.create({ url: musiclist[0] },function(tab){
+					chrome.tabs.executeScript(tab.id, {file: "onTitleChange.js"})
+				});
+			}
+			});
+	});
+	})();
+    </script>
+  </head>
+</html>

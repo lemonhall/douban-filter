@@ -1,0 +1,23 @@
+﻿{
+  "name" : "豆瓣的过滤器",
+  "version" : "0.1",
+  "description" : "过滤掉恼人的信息洪流？",
+  "page_action" :
+  {
+    "default_icon" : "sandwich-19.png",
+    "default_title" : "豆瓣的过滤器"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.douban.com/*"
+      ],
+      "js" : ["jquery-1.7.2.min.js","contentscript.js"],
+      "run_at" : "document_end",
+      "all_frames" : false
+    }
+  ],
+    "permissions": [
+        "tabs","http://www.douban.com/*"
+    ]
+}
