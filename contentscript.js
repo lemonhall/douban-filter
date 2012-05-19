@@ -9,8 +9,8 @@
 	doumail.after("<a id='douban-filter-btn' href='#'>过滤器</a>");
 
 	var overlay_html="<div id='lemon-overlay' style='position:absolute;left: 0px;top: 0px;width:100%;height:100%;z-index: 1000;'>";
-	var overlaydiv_html="<div style='width:300px;margin: 100px auto;background-color: #fff;border:1px solid #000;padding:15px;'>";
-	var closelnk_html="<a href='#'' class='overlay-lnk-close'>x</a>";
+	var overlaydiv_html="<div id='lemon-overlaydiv' style='width:250px;height:400px;margin: 30px 0px 0px 70%;background-color: #fff;border:1px solid #000;padding:15px;'>";
+	var closelnk_html="<a href='#'' class='overlay-lnk-close'>关闭[X]</a>";
 	var content_html="<p>Content you want the user to see goes here</p>";
 	var overlayend_html="</div></div>";
 	doumail.after(overlay_html+overlaydiv_html+closelnk_html+content_html+overlayend_html);
@@ -19,21 +19,34 @@
 	var db_filter_btn=$("#douban-filter-btn");
 	//缓存好【弹出窗口的CLOSE对象】
 	var overlay_close_btn=$(".overlay-lnk-close");
-	//缓存好弹出窗口本身
-	var overlay_win=$("#lemon-overlay");
-	//设置窗口的关闭按钮
-	overlay_close_btn.click(function(){
-		overlay_win.hide();	
+	//缓存设置窗口的遮罩层
+	var overlay_background=$("#lemon-overlay");
+	//缓存设置窗口本身
+	var overlay_win=$("#lemon-overlaydiv");
+	//设置窗口的关闭按钮行为
+	overlay_close_btn.click(function(event){
+		event.stopPropagation();
+		overlay_background.hide();	
 	});
-
-	//初始化的一些代码
-	overlay_win.hide();	
-	
+	//如果在设置框外点击，则立即隐藏整个遮罩层
+	overlay_background.click(function(){
+		overlay_background.hide();	
+	});
+	//点击设置窗口本身就别冒泡了，好不？
+	overlay_win.click(function(event){
+		event.stopPropagation();
+		overlay_background.show();	
+	});
 	//过滤器链接的点击事件响应
 	db_filter_btn.click(function(){
 			console.log("db_filter_btn click!");
-			overlay_win.show();
+			overlay_background.show();
 		}
 	);
+
+
+	//初始化的一些代码
+	overlay_background.hide();
+
 
 } )();

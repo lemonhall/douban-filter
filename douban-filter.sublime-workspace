@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"ov",
+				"overlaydiv"
+			],
+			[
+				"di",
+				"dialog"
+			],
+			[
+				"a",
+				"after"
+			],
+			[
 				"jq",
 				"jQuery.when	jQuery.when"
 			],
@@ -31,6 +43,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "manifest.json",
+			"settings":
+			{
+				"buffer_size": 466,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "contentscript.js",
+			"settings":
+			{
+				"buffer_size": 1282,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -39,12 +67,20 @@
 		"selected_items":
 		[
 			[
-				"git",
-				"Snippet: plugin (animation)"
+				"ch",
+				"ChangeQuotes"
+			],
+			[
+				"chang",
+				"ChangeQuotes"
 			],
 			[
 				"inst",
 				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Snippet: plugin (animation)"
 			],
 			[
 				"install",
@@ -127,8 +163,64 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "manifest.json",
+					"settings":
+					{
+						"buffer_size": 466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "contentscript.js",
+					"settings":
+					{
+						"buffer_size": 1282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								686,
+								686
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -188,6 +280,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 180.0,
+	"side_bar_width": 157.0,
 	"status_bar_visible": true
 }
