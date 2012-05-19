@@ -47,7 +47,7 @@
 			"file": "manifest.json",
 			"settings":
 			{
-				"buffer_size": 466,
+				"buffer_size": 480,
 				"line_ending": "Windows"
 			}
 		},
@@ -55,7 +55,7 @@
 			"file": "contentscript.js",
 			"settings":
 			{
-				"buffer_size": 1282,
+				"buffer_size": 1658,
 				"line_ending": "Windows"
 			}
 		}
@@ -171,15 +171,15 @@
 					"file": "manifest.json",
 					"settings":
 					{
-						"buffer_size": 466,
+						"buffer_size": 480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								198,
+								198
 							]
 						],
 						"settings":
@@ -199,24 +199,25 @@
 					"file": "contentscript.js",
 					"settings":
 					{
-						"buffer_size": 1282,
+						"buffer_size": 1658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								686,
-								686
+								1159,
+								1159
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1287.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
